@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Level Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Garbage Level Details</h1>
+        </header>
+        <div class="chart-container">
+            <canvas id="garbageChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Sample garbage level data
+        const garbageLevelData = [20, 30, 50]; // Replace with your actual data
+
+        // Generate pie chart
+        const ctx = document.getElementById('garbageChart').getContext('2d');
+        const garbageChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Low', 'Medium', 'High'],
+                datasets: [{
+                    data: garbageLevelData,
+                    backgroundColor: ['#36A2EB', '#FFCE56', '#FF6384'],
+                    hoverBackgroundColor: ['#36A2EB', '#FFCE56', '#FF6384']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

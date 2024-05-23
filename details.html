@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Methane Gas Level Details</h1>
+        </header>
+        <div class="chart-container">
+            <canvas id="methaneChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Generate empty pie chart
+        const ctx = document.getElementById('methaneChart').getContext('2d');
+        const methaneChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Loading...'],
+                datasets: [{
+                    data: [1], // Dummy data to prevent Chart.js error
+                    backgroundColor: ['#f0f0f0'], // Background color for the loading chart
+                    hoverBackgroundColor: ['#f0f0f0'] // Hover background color for the loading chart
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false // Hide legend for the loading chart
+                },
+                title: {
+                    display: true,
+                    text: 'Loading...', // Title for the loading chart
+                    fontSize: 16
+                }
+            }
+        });
+
+        // Retrieve methane gas level data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const methaneGasLevelData = [];
+        for (let i = 0; i < 3; i++) { // Assuming there are 3 levels
+            const level = parseInt(urlParams.get(`level${i}`));
+            if (!isNaN(level)) {
+                methaneGasLevelData.push(level);
+            }
+        }
+
+        // Update pie chart with methane gas level data
+        methaneChart.data.labels = ['Low', 'Medium', 'High'];
+        methaneChart.data.datasets[0].data = methaneGasLevelData;
+        methaneChart.update();
+    </script>
+</body>
+</html>

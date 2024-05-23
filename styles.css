@@ -1,0 +1,85 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 4rem; /* Add padding-top to avoid content hiding behind the header */
+}
+
+header {
+    background: #50b3a2;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the header stays on top */
+}
+
+header h1 {
+    margin: 0;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 2rem; /* Space between the cards */
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    width: 40%; /* Adjust width as necessary */
+    max-width: 400px; /* Set a maximum width */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+button {
+    background: #50b3a2;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: #429488;
+}

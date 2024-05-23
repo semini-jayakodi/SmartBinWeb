@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Environmental Monitoring Dashboard</h1>
+        </header>
+        <div class="dashboard">
+            <div class="card" id="methane">
+                <h2>Methane Gas Level</h2>
+                <p>Monitor the methane gas levels in real-time.</p>
+                <button onclick="openMethaneDetailsPage()">View Details</button>
+            </div>
+            <div class="card" id="garbage">
+                <h2>Garbage Level</h2>
+                <p>Check the current garbage levels.</p>
+                <button onclick="openGarbageDetailsPage()">View Details</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openMethaneDetailsPage() {
+            window.open("methane_details.html", "_blank"); // Open in a new tab
+            window.open("http://www.google.com", "_blank"); // Open google.com in a new tab
+        }
+
+        function openGarbageDetailsPage() {
+            window.open("garbage_details.html", "_blank"); // Open in a new tab
+            window.open("http://www.google.com", "_blank"); // Open google.com in a new tab
+        }
+    </script>
+</body>
+</html>
