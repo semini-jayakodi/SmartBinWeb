@@ -150,7 +150,7 @@
 <script>
     async function fetchData() {
         try {
-            const response = await fetch('https://smartbinserver.onrender.com/api/smartbin');
+            const response = await fetch('https://smartbin-di83.onrender.com/api/smartbin');
             const data = await response.json();
             document.getElementById('garbageAmount').innerText = data.GAmount + ' cm';
             document.getElementById('methaneAmount').innerText = data.MAmount + ' ppm';
